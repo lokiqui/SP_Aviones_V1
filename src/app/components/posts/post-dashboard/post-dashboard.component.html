@@ -1,0 +1,85 @@
+<section>
+  <mat-panel-title style="font-size: 20px;">Formulario de Aviones y Simuladores</mat-panel-title>
+  <br />
+  <br />
+  <mat-form-field>
+    <mat-label>Tipo:</mat-label>
+    <select matNativeControl [(ngModel)]="tipo" name="Tipo">
+      <option value="Avion">Avion</option>
+      <option value="Simulador">Simulador</option>
+    </select>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input matInput 
+    placeholder="Fabricante" 
+    [(ngModel)]="fabricante" 
+    name="Fabricante" />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Modelo"
+      [(ngModel)]="modelo"
+      name="Modelo"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Patente"
+      [(ngModel)]="patente"
+      name="Patente"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Costo de Uso"
+      [(ngModel)]="costo"
+      name="Costo de Uso"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Activo</mat-label>
+    <select matNativeControl [(ngModel)]="activo" name="Activo">
+      <option value="Si">Si</option>
+      <option value="No">No</option>
+    </select>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Estado</mat-label>
+    <select matNativeControl [(ngModel)]="estado" name="Estado">
+      <option value="Decomisionado">Decomisionado</option>
+      <option value="Mantenimiento">Mantenimiento</option>
+      <option value="Operativo">Operativo</option>
+      <option value="Perdido">Perdido</option>
+      <option value="Revision Tecnica">Revision Tecnica</option>
+      <option value="Robado">Robado</option>
+    </select>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <textarea
+      matInput
+      placeholder="Comentarios"
+      [(ngModel)]="comentarios"
+      name="Comentarios"
+      rows="4"
+    ></textarea>
+  </mat-form-field>
+  <br />
+  <button
+    mat-raised-button
+    (click)="createPost()"
+    [disabled]="!fabricante || !modelo || !patente || !activo || !comentarios"
+    color="accent"
+  >
+    {{ buttonText }}
+  </button>
+</section>
